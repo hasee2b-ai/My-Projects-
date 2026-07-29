@@ -1,0 +1,183 @@
+
+@font-face {
+    font-family: sl;
+    src: url("./fonts/Moderat-Regular.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sl;
+    color: white;
+    font-weight: 600;
+}
+
+/* Utlility classes  */
+
+.regular-txt{
+    font-weight: 300;
+}
+
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: url(assets/Foggy_mountain_in_valley_2K_202607221857.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-container{
+    position: relative;
+    margin-bottom: 30px;
+}
+body:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;   
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.main-container{
+    /* border: solid; */
+    width: 300px;
+    height: 490px;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0 , 0 , 0 , 0.15) , rgba(255 , 255 , 255, 0.15));
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+    padding: 20px;
+}
+.city-input{
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 90px;
+    border: 3px solid transparent;
+    outline: none;
+    background: rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+    transition: 0.25s border;
+    padding-right: 45px;
+}
+.city-input:focus{
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+.city-input::placeholder{
+    color: rgba(255, 255, 255, 0.75);
+}
+.search-btn{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Weather Info  */
+
+.weather-info{
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.location-date-container{
+    /* border: solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.location{
+    /* border: solid green; */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.weather-summary-container{
+    /* border: solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.weather-summary-img{
+    /* border: solid; */
+    width: 115px;
+    height: 115px;
+}
+.weather-summary-info{
+    text-align: end;
+}
+.weather-condition-container{
+    display: flex;
+    justify-content: space-between;
+    /* border: solid; */
+}
+.condition-item{
+    /* border: solid; */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.condition-item span{
+    font-size:20px;
+}
+.forecast-item-container{
+    display: flex;
+    gap: 15px;
+    /* overflow: scroll; */
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 12px;
+}
+
+.forecast-item-container::-webkit-scrollbar{
+    height: 7px;
+}
+.forecast-item-container::-webkit-scrollbar-track{
+    background: rgb(0 , 0 , 0 , 0.05);
+    border-radius: 99px;
+}
+.forecast-item-container::-webkit-scrollbar-thumb{
+    background: rgb(0 , 0 , 0 , 0.15);
+    border-radius: 99px;
+}
+.forecast-item{
+    min-width: 70px;
+    background-color: rgba(255 , 255 , 255 , 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3;
+}
+.forecast-item:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.forecast-item-img{
+    width: 35px;
+    height: 35px;
+}
+
+.section-message{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-top: 25%;
+}
+.section-message img{
+    height: 180px;
+    width: fit-content;
+}
