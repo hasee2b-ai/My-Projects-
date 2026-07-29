@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Hk Tech— Scientific Calculator</title>
+  </head>
+  <body>
+
+        <!-- Loading Screen -->
+   
+    <div id="loader">
+
+        <div class="logo">
+            HK TECH
+        </div>
+
+        <div id="terminal">
+
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
+        </div>
+
+        <div class="loadingBar">
+
+            <div class="loadingFill"></div>
+
+        </div>
+
+        <div class="percent">0%</div>
+
+    </div>
+
+    <div id="main">
+
+    <div class="calc">
+      <div class="topbar">
+        <div class="dots">
+          <div class="dot r"></div>
+          <div class="dot y"></div>
+          <div class="dot g"></div>
+        </div>
+        <div class="brand">HK Tech Model-V4</div>
+        <div class="badge">SCIENTIFIC</div>
+      </div>
+
+      <div class="dzone">
+        <div class="eline" id="eline"></div>
+        <div class="mdisp" id="mdisp">0</div>
+        <div class="dmeta">
+          <span class="mchip" id="mchip">MEM</span>
+          <span class="achip" id="achip">DEG</span>
+        </div>
+      </div>
+
+      <div class="barea" id="barea">
+        <!-- ROW 1: 2nd | MC MR M+ M- MS | π e RND -->
+        <div class="row">
+          <button class="btn SH" id="shiftBtn" data-a="shift">2nd</button>
+          <button class="btn ME" data-a="mc">MC</button>
+          <button class="btn ME" data-a="mr">MR</button>
+          <button class="btn ME" data-a="mplus">M+</button>
+          <button class="btn ME" data-a="mminus">M−</button>
+          <button class="btn ME" data-a="ms">MS</button>
+          <button class="btn SC" data-a="pi">π</button>
+          <button class="btn SC" data-a="econ">e</button>
+          <button class="btn SC" data-a="rand">RND</button>
+        </div>
+
+        <!-- ROW 2: sin cos tan log ln √ x² xʸ 1/x  (2nd: inverses) -->
+        <div class="row">
+          <button class="btn SC" id="bsin" data-a="sin">sin</button>
+          <button class="btn SC" id="bcos" data-a="cos">cos</button>
+          <button class="btn SC" id="btan" data-a="tan">tan</button>
+          <button class="btn SC" id="blog" data-a="log">log</button>
+          <button class="btn SC" id="bln" data-a="ln">ln</button>
+          <button class="btn SC" id="bsqrt" data-a="sqrt">√</button>
+          <button class="btn SC" id="bsq" data-a="sq">x²</button>
+          <button class="btn SC" id="bpow" data-a="pow">xʸ</button>
+          <button class="btn SC" id="binv" data-a="inv">1/x</button>
+        </div>
+
+        <!-- ROW 3: n! |x| ∛ 10ˣ ( ) CE C ⌫ -->
+        <div class="row">
+          <button class="btn SC" data-a="fact">n!</button>
+          <button class="btn SC" data-a="abs">|x|</button>
+          <button class="btn SC" data-a="cbrt">∛</button>
+          <button class="btn SC" data-a="exp10">10ˣ</button>
+          <button class="btn OP" data-a="oparen">(</button>
+          <button class="btn OP" data-a="cparen">)</button>
+          <button class="btn CT" data-a="ce">CE</button>
+          <button class="btn CT" data-a="clear">C</button>
+          <button class="btn CT" data-a="back">⌫</button>
+        </div>
+
+        <!-- ROW 4: 7 8 9 % mod ÷ -->
+        <div class="row">
+          <button class="btn N" data-a="7">7</button>
+          <button class="btn N" data-a="8">8</button>
+          <button class="btn N" data-a="9">9</button>
+          <button class="btn SC" data-a="pct">%</button>
+          <button class="btn OP" data-a="mod">mod</button>
+          <button class="btn OP" data-a="div">÷</button>
+        </div>
+
+        <!-- ROW 5: 4 5 6 EE +/− × -->
+        <div class="row">
+          <button class="btn N" data-a="4">4</button>
+          <button class="btn N" data-a="5">5</button>
+          <button class="btn N" data-a="6">6</button>
+          <button class="btn SC" data-a="ee">EE</button>
+          <button class="btn OP" data-a="neg">+/−</button>
+          <button class="btn OP" data-a="mul">×</button>
+        </div>
+
+        <!-- ROW 6: 1 2 3 x³ ʸ√x − -->
+        <div class="row">
+          <button class="btn N" data-a="1">1</button>
+          <button class="btn N" data-a="2">2</button>
+          <button class="btn N" data-a="3">3</button>
+          <button class="btn SC" data-a="cube">x³</button>
+          <button class="btn SC" data-a="yroot">ʸ√x</button>
+          <button class="btn OP" data-a="sub">−</button>
+        </div>
+
+        <!-- ROW 7: 0(wide) . ANS = + -->
+        <div class="row">
+          <button class="btn N w2" data-a="0">0</button>
+          <button class="btn N" data-a="dot">.</button>
+          <button class="btn SC" data-a="ans">ANS</button>
+          <button class="btn EQ" data-a="eq">=</button>
+          <button class="btn OP" data-a="add">+</button>
+        </div>
+      </div>
+
+      <div class="foot">NOVA Scientific · All Systems Operational</div>
+    </div>
+</div>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- Shery.js -->
+<script src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
